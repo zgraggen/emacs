@@ -1,3 +1,8 @@
+;;; Added by Guido
+
+(global-linum-mode t)
+(global-hl-line-mode 1)
+
 ;;;
 ;;; Primary functionality group
 ;;;
@@ -30,8 +35,7 @@
 (setq next-line-add-newlines nil)   ; don't let me add newlines at the EOF
 (add-hook 'write-file-hooks 'time-stamp) ; Add time stamps
 
-
-;; Remove the annoying redundancy. When I type `y', I mean `y'.
+; Remove the annoying redundancy. When I type `y', I mean `y'.
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;;
@@ -45,7 +49,7 @@
 
 (if window-system ;;; Win32 or X11 or Visual display et al...
     (progn
-          ;;; Fun for the whole GUI
+         ;;; Fun for the whole GUI
       (setq-default mouse-yank-at-point t) ; Yank at the point, not at cursor
       (setq search-highlight t)            ; Highlight current search result.
 
@@ -55,9 +59,9 @@
 ;; tryin' this out
 (setq enable-recursive-minibuffers t)
 
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; Delete trailing whitespace
 (add-hook 'write-file-functions 'delete-trailing-whitespace)
